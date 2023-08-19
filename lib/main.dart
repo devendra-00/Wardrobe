@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/screens/login.dart';
+import 'package:myapp/screens/signup_screen.dart';
 import 'package:myapp/screens/splash_screeen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
 
       theme: ThemeData(
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const Splash(),
