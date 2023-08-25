@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_animate/flutter_animate.dart";
-import "../widgets/login_background.dart";
+import "../widgets/login_sign_backround.dart";
 import "login.dart";
 
 class Signup extends StatefulWidget {
@@ -19,64 +19,60 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     double width= MediaQuery.of(context).size.width; //Gives the width
-    return  Stack(
-      children: [
-        const login_background(),
-        Scaffold(
-          resizeToAvoidBottomInset: false,
-          backgroundColor: Colors.transparent,
-          body:Column(
+    return Stack(
+        children: [
+          login_sign_background(),
+          Scaffold(
+            resizeToAvoidBottomInset: false,
+            backgroundColor: Colors.transparent,
+            body:Stack(
                 children: [
-                  usericon(),
-                  Expanded(
-                    child: SizedBox(
-                      height: 200,
-                      width: width,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20,right: 20),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SingleChildScrollView(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  name(), consizedbox(),
-                                  username(), consizedbox(),
-                                  mobile(), consizedbox(),
-                                  password(), consizedbox(),
-                                  signupButton()
-                                ],
-                              ),
-                            ),
-                            haveAccount(),
-                          ],
+                  Align(alignment: Alignment.bottomCenter,child:haveAccount() ,),
+                  Stack(
+                      children:[
+                        Center(
+                          child: Container(
+                            height: 320,
+                            width: width-40,
+                            child: Text("SIGN UP !!",
+                              style: TextStyle(color:Colors.white70,fontStyle: FontStyle.italic,fontSize: 35,fontWeight: FontWeight.w700),),
+                          ),
                         ),
-                      ) ,
-                    ),
+                        Center(
+                          child: Container(
+                            height: 230,
+                            width: width-40,
+                            child: Column(
+
+                              children: [
+                                Container(height: 160,
+                                  child: Scrollbar(
+                                    thumbVisibility: true,
+                                    thickness: 10,
+                                    radius: Radius.circular(20),
+                                    scrollbarOrientation: ScrollbarOrientation.right,
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.vertical,
+                                      child: Column(children: [name(),SizedBox(height: 20,),
+                                        username(),SizedBox(height: 20,),
+                                        mobile(),SizedBox(height: 20,),
+                                        password(),SizedBox(height: 20,),
+                                      ],),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 10,),
+                                signupButton()
+                              ],
+                            ),
+                          ),
+                        ),
+                      ]
                   ),
-                ],
-              ),
-        )
-      ],
-    );
-  }
-  consizedbox(){
-    return const SizedBox(
-      height: 20,
-    );
-  }
-  usericon(){
-    double height= MediaQuery.of(context).size.height; //Gives the height
-    return SizedBox(
-        height:height*0.3,
-        child: Align(
-            alignment: Alignment.center,
-            child: Image(image: const AssetImage("assets/icons/adduser.png"),
-              color:Colors.grey.withOpacity(0.5),
-              width: 100,
-            height: 100,)
-        )
+                ]
+            ),
+          ),
+        ]
     );
   }
   name(){
@@ -107,11 +103,11 @@ class _SignupState extends State<Signup> {
               ),
               labelText: "  First name",labelStyle:const TextStyle(fontSize:18,color: Colors.white70) ,
               prefixIcon: const Icon(Icons.abc,color: Colors.white70,),
-              filled:true,fillColor:Colors.grey.withOpacity(0.3),
+              filled:true,fillColor:Colors.black.withOpacity(0.3),
               hintText:"Devedndra",hintStyle: TextStyle(color: Colors.white30.withOpacity(0.1))
           ),
         ).animate()
-            .fadeIn(duration: const Duration(milliseconds: 200))
+            .fadeIn(duration: const Duration(milliseconds: 300))
             .shimmer(duration: const Duration(seconds: 1)),
       ),
     );
@@ -142,11 +138,11 @@ class _SignupState extends State<Signup> {
             ),
             labelText: "  Username",labelStyle:const TextStyle(fontSize:18,color: Colors.white70) ,
             prefixIcon:const Icon(Icons.account_circle_outlined,color: Colors.white70,),
-            filled:true,fillColor:Colors.grey.withOpacity(0.3),
+            filled:true,fillColor:Colors.black.withOpacity(0.3),
             hintText:"devward0",hintStyle: TextStyle(color: Colors.white30.withOpacity(0.1))
         ),
       ).animate()
-          .fadeIn(delay:const Duration(milliseconds: 500),duration: const Duration(milliseconds: 500))
+          .fadeIn(delay:const Duration(milliseconds: 300),duration: const Duration(milliseconds: 300))
           .shimmer(duration: const Duration(seconds: 1)),
     );
   }
@@ -177,11 +173,11 @@ class _SignupState extends State<Signup> {
             ),
             labelText: "  Mobile No.",labelStyle:const TextStyle(fontSize:18,color: Colors.white70) ,
             prefixIcon:const Icon(Icons.call,color: Colors.white70,),
-            filled:true,fillColor:Colors.grey.withOpacity(0.3),
+            filled:true,fillColor:Colors.black.withOpacity(0.3),
             hintText:"7898820922",hintStyle: TextStyle(color: Colors.white30.withOpacity(0.1))
         ),
       ).animate()
-          .fadeIn(delay:const Duration(milliseconds: 1000),duration: const Duration(milliseconds: 800))
+          .fadeIn(delay:const Duration(milliseconds: 500),duration: const Duration(milliseconds: 300))
           .shimmer(duration: const Duration(seconds: 1)),
     );
   }
@@ -211,60 +207,60 @@ class _SignupState extends State<Signup> {
             ),
             labelText: "  Password",labelStyle:const TextStyle(fontSize:18,color: Colors.white70) ,
             prefixIcon:const Icon(Icons.key,color: Colors.white70,),
-            filled:true,fillColor:Colors.grey.withOpacity(0.3),
+            filled:true,fillColor:Colors.black.withOpacity(0.3),
             hintText:"* * * * * * *",hintStyle: TextStyle(color: Colors.white30.withOpacity(0.1))
         ),
       ).animate()
-          .fadeIn(delay:const Duration(milliseconds: 1500),duration: const Duration(milliseconds: 1200))
+          .fadeIn(delay:const Duration(milliseconds: 700),duration: const Duration(milliseconds: 300))
           .shimmer(duration: const Duration(seconds: 1)),
     );
   }
   signupButton(){
     double width= MediaQuery.of(context).size.width; //Gives the width
     //double height= MediaQuery.of(context).size.height; //Gives the width
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: Container(
-        constraints: BoxConstraints(
-            minWidth: width,
-            minHeight:60
+    return Container(
+      constraints: BoxConstraints(
+          minWidth: width,
+          minHeight:60
 
-        ),
-        child: ElevatedButton(
-            focusNode: signupNode,
-            onPressed: (){},
-            style: ButtonStyle(
-              shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      side: const BorderSide(color: Colors.grey)
-                  )
-              ),
-              backgroundColor: const MaterialStatePropertyAll<Color>(Colors.blueGrey),
+      ),
+      child: ElevatedButton(
+          focusNode: signupNode,
+          onPressed: (){},
+          style: ButtonStyle(
+            shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    side: const BorderSide(color: Colors.grey)
+                )
             ),
-            child:const  Text("SIGN UP",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight:FontWeight.w400,
-                color: Colors.white,
-              ),
-            )
-        ),
-      ).animate()
-          .fadeIn(delay:const Duration(milliseconds: 2000),duration: const Duration(milliseconds: 500)),
-    );
+            backgroundColor: const MaterialStatePropertyAll<Color>(Color(0xff38978E)),
+          ),
+          child:const  Text("SIGN UP",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight:FontWeight.w400,
+              color: Colors.white,
+            ),
+          )
+      ),
+    ).animate()
+        .fadeIn(delay:const Duration(milliseconds: 900),duration: const Duration(milliseconds: 300));
   }
   haveAccount(){
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text("Already have Account ?",style: TextStyle(color: Colors.grey)),
-        InkWell(
-            overlayColor: const MaterialStatePropertyAll(Colors.cyan),
-            onTap: (){Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Login()));},
-            child: const Text('Log In', style: TextStyle(color: Colors.blueGrey))
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text("Already have Account ?",style: TextStyle(color: Colors.grey)),
+          InkWell(
+              overlayColor: const MaterialStatePropertyAll(Colors.transparent),
+              onTap: (){Navigator.pop(context,MaterialPageRoute(builder: (context) => const Signup()));},
+              child: const Text('Log In', style: TextStyle(color: Color(0xff38978E)))
+          ),
+        ],
+      ),
     );
   }
 }

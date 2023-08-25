@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/screens/login.dart';
-import 'package:myapp/screens/signup_screen.dart';
 import 'package:myapp/screens/splash_screeen.dart';
+
 
 
 void main() {
@@ -19,7 +18,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       theme: ThemeData(
-
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
