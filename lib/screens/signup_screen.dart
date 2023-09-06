@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_animate/flutter_animate.dart";
 import "../widgets/login_sign_backround.dart";
-import "login.dart";
 
 class Signup extends StatefulWidget {
   const Signup({super.key});

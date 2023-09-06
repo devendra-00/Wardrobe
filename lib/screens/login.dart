@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/screens/forgotpass.dart';
+import 'package:myapp/screens/forgotPass_Verify/forgotpass.dart';
 import 'package:myapp/screens/signup_screen.dart';
 import 'package:myapp/widgets/login_sign_backround.dart';
 import 'package:flutter_animate/flutter_animate.dart';

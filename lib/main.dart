@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/screens/forgotPass_Verify/forgotpass.dart';
+import 'package:myapp/screens/forgotPass_Verify/otpVerify.dart';
+import 'package:myapp/screens/login.dart';
 import 'package:myapp/screens/splash_screeen.dart';
 
 

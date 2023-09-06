@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:myapp/screens/login.dart';
+import 'package:myapp/screens/forgotPass_Verify/otpVerify.dart';
 import 'package:myapp/widgets/login_sign_backround.dart';
+
 
 
 class ForgotPass extends StatefulWidget {
@@ -21,6 +22,7 @@ class _ForgotPassState extends State<ForgotPass> {
     return Stack(
         children: [
           login_sign_background(),
+
           Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: Colors.transparent,
@@ -48,7 +50,8 @@ class _ForgotPassState extends State<ForgotPass> {
                     children: [
                       Column(children: [username(),SizedBox(height: 20,), mobile(),],),
                       mobile_username(),
-                      loginButton()
+                      loginButton(),
+
                     ],
                   ),
                 ),
@@ -56,6 +59,7 @@ class _ForgotPassState extends State<ForgotPass> {
               ]
             ),
           ),
+
         ]
     );
   }
@@ -162,7 +166,7 @@ class _ForgotPassState extends State<ForgotPass> {
   }
   loginButton(){
     double width= MediaQuery.of(context).size.width; //Gives the width
-    //double height= MediaQuery.of(context).size.height; //Gives the width
+    double height= MediaQuery.of(context).size.height; //Gives the width
     return Container(
       constraints: BoxConstraints(
           minWidth: width,
@@ -171,7 +175,7 @@ class _ForgotPassState extends State<ForgotPass> {
       ),
       child: ElevatedButton(
           //focusNode: loginBtn,
-          onPressed: (){},
+          onPressed: (){Navigator.push(context,MaterialPageRoute(builder: (context) => const otpVerfiy()));},
           style: ButtonStyle(
             shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
@@ -181,7 +185,7 @@ class _ForgotPassState extends State<ForgotPass> {
             ),
             backgroundColor: const MaterialStatePropertyAll<Color>(Color(0xff38978E)),
           ),
-          child:const  Text("VERIFY",
+          child:const  Text("CONTINUE",
             style: TextStyle(
               fontSize: 18,
               fontWeight:FontWeight.w400,
@@ -193,3 +197,4 @@ class _ForgotPassState extends State<ForgotPass> {
         .fadeIn(delay:const Duration(milliseconds: 1000),duration: const Duration(milliseconds: 500));
   }
 }
+
