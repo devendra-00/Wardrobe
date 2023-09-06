@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/screens/forgotPass_Verify/forgotpass.dart';
 import 'package:myapp/screens/forgotPass_Verify/otpVerify.dart';
+import 'package:myapp/screens/landing_page.dart';
 import 'package:myapp/screens/login.dart';
 import 'package:myapp/screens/splash_screeen.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Splash(),
+      home: const  landingpage(),
     );
   }
 }
