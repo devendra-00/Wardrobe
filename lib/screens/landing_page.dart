@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/widgets/home_Page.dart';
+import 'package:myapp/widgets/outfits_.dart';
+import 'package:myapp/widgets/wish_List.dart';
 
 
 class landingpage extends StatefulWidget {
@@ -10,20 +13,17 @@ class landingpage extends StatefulWidget {
 
 class _landingpageState extends State<landingpage> {
   int _selectedIndex=0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Home Page', style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('Search Page', style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('Profile Page', style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-  ];
-
-  void _onItemTapped(int index) {
+  static const List<Widget> pages =[home(),wish(),outfits()];
+  void _onItemTapped(index) {
     setState(() {
       _selectedIndex = index;
     });
   }
   @override
   Widget build(BuildContext context) {
+    final Size size= MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.transparent,
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -41,21 +41,16 @@ class _landingpageState extends State<landingpage> {
                 label: "OUTFITS",
                 backgroundColor: Color(0xff38978E)
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: "PERSON",
-              backgroundColor: Color(0xff38978E),
-            ),
           ],
-          type: BottomNavigationBarType.shifting,
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.black,
-          iconSize: 40,
-          onTap: _onItemTapped,
-          elevation: 5
+          selectedItemColor:const Color(0xff38978E),
+          unselectedItemColor: Colors.blueGrey.withOpacity(0.5),
+          backgroundColor: Colors.black,
+          selectedFontSize: 15,
+          onTap: _onItemTapped
       ),
+      body: pages[_selectedIndex],
+
     );
   }
 }
-
-

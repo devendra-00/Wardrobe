@@ -50,6 +50,7 @@ class _otpVerfiyState extends State<otpVerfiy> {
     double height=MediaQuery.of(context).size.height;
     return Stack(
         children: [
+
           login_sign_background(),
 
           Scaffold(
