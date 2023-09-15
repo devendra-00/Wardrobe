@@ -11,7 +11,7 @@ class _outfitsState extends State<outfits> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.black,
       body: Center(child: Text('Outfits Page', style: TextStyle(color: Colors.blueGrey,fontSize: 35, fontWeight: FontWeight.bold))),
 
     );
