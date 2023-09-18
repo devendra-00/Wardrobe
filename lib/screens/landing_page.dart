@@ -23,6 +23,7 @@ class _landingpageState extends State<landingpage> {
     setState(() {
       const Drawer(
 
+
       );
     });
   }
@@ -36,9 +37,93 @@ class _landingpageState extends State<landingpage> {
         width: size.width*0.8,
         elevation: 5,
         shadowColor:Color(0xff38978E) ,
-        child: ListView(
-          children:[
-          ],
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(
+                  'https://uhdwallpapers.org/uploads/converted/18/04/11/shadow-portrait-1024x1024_87685-mm-90.jpg'),
+              fit: BoxFit.cover,
+
+            ),
+            color: Colors.deepPurple,
+          ),
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children:[
+
+              UserAccountsDrawerHeader(accountName: Text('Dabba.0000',style: TextStyle(color: Colors.white,fontSize: 20)),
+                  accountEmail: Text('Devendra Kushwaha',style: TextStyle(color: Colors.white,fontSize: 16)),
+                  currentAccountPicture: CircleAvatar(
+                    child: ClipOval(
+                      child: Image.network(
+                          'https://scontent.fbho5-1.fna.fbcdn.net/v/t39.30808-6/277005369_1038391897026177_4383966942311431436_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=yugSJlDZODUAX_el4k7&_nc_ht=scontent.fbho5-1.fna&oh=00_AfC07OrZ1qC7_a-fgbUdh-M9FiZNUVbBsFyLn0U8Bh7x8Q&oe=650CE109',
+                          width: 90,
+                          height:90,
+                          fit: BoxFit.cover,
+                      )
+                    ),
+                  ),
+
+               decoration: BoxDecoration(
+                  color: Colors.transparent,
+                /* image: DecorationImage(
+                    image: NetworkImage(
+                        'https://images3.alphacoders.com/103/1033318.jpg'),
+                    fit: BoxFit.cover,
+
+                  ), */
+                ),
+
+              ),
+              ListTile(
+                leading: Icon(Icons.favorite,color: Colors.white),
+                title: Text('Favourites',style: TextStyle(color: Colors.white,fontSize: 20)),
+                onTap: ()=>print('fav'),
+              ),
+              Divider(),
+              ListTile(
+                leading: Icon(Icons.people,color: Colors.white),
+                title: Text('Friends',style: TextStyle(color: Colors.white,fontSize: 20)),
+                onTap: ()=>print('fav'),
+              ),
+              ListTile(
+                leading: Icon(Icons.notifications,
+                color: Colors.white,
+                ),
+                title: Text('Notifications',style: TextStyle(color: Colors.white,fontSize: 20)),
+                trailing: ClipOval(
+                  child: Container(
+                    color: Colors.redAccent,
+                    width: 20,
+                    height: 20,
+                    child: Center(child: Text('69',style: TextStyle(color: Colors.white,fontSize: 12),)),
+                  ),
+                ),
+                onTap: ()=>print('fav'),
+              ),
+              ListTile(
+                leading: Icon(Icons.share,color: Colors.white),
+                title: Text('share',style: TextStyle(color: Colors.white,fontSize: 20)),
+                onTap: ()=>print('fav'),
+              ),
+              Divider(),
+              ListTile(
+                leading: Icon(Icons.settings,color: Colors.white),
+                title: Text('Settings',style: TextStyle(color: Colors.white,fontSize: 20)),
+                onTap: ()=>print('fav'),
+              ),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: ListTile(
+                  leading: Icon(Icons.exit_to_app,color: Colors.white),
+                  title: Text('Logout',style: TextStyle(color: Colors.white,fontSize: 20)),
+                  onTap: ()=>print('fav'),
+                ),
+              ),
+
+
+            ],
+          ),
         ),
       ),
       backgroundColor: Colors.transparent,
